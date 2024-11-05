@@ -1,23 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, ScrollView, Platform, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import TaskFactory from './TaskFactory'; // Factory Method Pattern
+import TaskRepository from './TaskRepository'; // Singleton Pattern
 import Task from './components/Task';
-
-// Task Factory
-const createTask = (text) => {
-  return {
-    text,
-    id: Date.now(), // Unique ID based on the current timestamp
-    completed: false, // New property to track completion
-  };
-};
+import TrelloAdapter from './TrelloAdapter'; // Adapter Pattern
+import TaskComposite from './TaskComposite'; // Composite Pattern
+import TaskObserver from './TaskObserver'; // Observer Pattern
+import TaskSorting from './TaskSorting'; // Strategy Pattern
+import TaskCommand from './TaskCommand'; // Command Pattern
 
 export default function App() {
-  const [task, setTask] = useState('');
-  const [taskItems, setTaskItems] = useState([]);
+  const [taskText, setTaskText] = useState('');
+  const [taskItems, setTaskItems] = useState(TaskRepository.getTasks());
 
   useEffect(() => {
-    // Load tasks from local storage when the app starts
     const loadTasks = async () => {
       const storedTasks = await AsyncStorage.getItem('tasks');
       if (storedTasks) {
@@ -28,40 +25,31 @@ export default function App() {
   }, []);
 
   const handleAddTask = async () => {
-    if (!task.trim()) {
+    if (!taskText.trim()) {
       Alert.alert('Task cannot be empty');
       return;
     }
     
     Keyboard.dismiss();
-    const newTask = createTask(task);
+    const newTask = TaskFactory.createTask(taskText, 'personal');
+    TaskRepository.addTask(newTask);
     const updatedTasks = [...taskItems, newTask];
     setTaskItems(updatedTasks);
-    setTask('');
+    setTaskText('');
 
-    // Save tasks to local storage
     await AsyncStorage.setItem('tasks', JSON.stringify(updatedTasks));
-    notifyTaskAdded(newTask);
+    Alert.alert('Task Added', `Task "${newTask.text}" has been added!`);
   };
 
   const completeTask = async (id) => {
-    const updatedTasks = taskItems.map(item => 
-      item.id === id ? { ...item, completed: !item.completed } : item
-    );
+    const updatedTasks = taskItems.map(task => {
+      if (task.id === id) {
+        task.completed = !task.completed; // Toggle the completed status
+      }
+      return task;
+    });
     setTaskItems(updatedTasks);
-
-    // Update local storage
     await AsyncStorage.setItem('tasks', JSON.stringify(updatedTasks));
-    notifyTaskCompleted(id);
-  };
-
-  // Notification functions
-  const notifyTaskAdded = (task) => {
-    Alert.alert('Task Added', `Task "${task.text}" has been added!`);
-  };
-
-  const notifyTaskCompleted = (id) => {
-    Alert.alert('Task Completed', `Task with ID "${id}" has been completed!`);
   };
 
   return (
@@ -75,7 +63,7 @@ export default function App() {
                 key={item.id} 
                 text={item.text} 
                 completed={item.completed} 
-                onComplete={() => completeTask(item.id)} 
+                onComplete={() => completeTask(item.id)} // Pass task ID to completeTask
               />
             ))}
           </View>
@@ -89,8 +77,8 @@ export default function App() {
         <TextInput 
           style={styles.input} 
           placeholder={'Write a task'} 
-          value={task} 
-          onChangeText={setTask} 
+          value={taskText} 
+          onChangeText={setTaskText} 
         />
         <TouchableOpacity onPress={handleAddTask}>
           <View style={styles.addWrapper}>
