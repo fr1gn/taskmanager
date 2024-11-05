@@ -67,27 +67,22 @@ Here are some UML diagrams representing the architecture and the design patterns
    ```bash
    npm run reset-project
    ```
-   
-## Get a fresh project
 
-When you're ready, run:
+## Assumptions and Limitations
 
-```bash
-npm run reset-project
-```
+- **Assumptions:** This app assumes a local environment for task management without external data persistence.
+- **Limitations:** The current implementation does not include a backend API for data storage, so tasks are stored temporarily and do not persist between app sessions.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Additional Resources
 
-## Learn more
+To learn more about developing with Expo:
 
-To learn more about developing your project with Expo, look at the following resources:
+- **[Expo documentation](https://docs.expo.dev/):** Covers both fundamental and advanced topics, including guides for various features.
+- **[Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/):** Step-by-step guide to building an app that works across platforms.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Join the Expo Community
 
-## Join the community
+Connect with developers and the Expo team:
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- **[Expo on GitHub](https://github.com/expo/expo):** View and contribute to the open-source project.
+- **[Discord community](https://chat.expo.dev):** Chat with other developers, ask questions, and get support.
