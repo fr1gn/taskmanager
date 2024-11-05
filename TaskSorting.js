@@ -1,11 +1,11 @@
 class TaskSorting {
     static sortByDate(tasks) {
-      return tasks.sort((a, b) => new Date(a.date) - new Date(b.date));
+        return tasks.sort((a, b) => new Date(a.date) - new Date(b.date)); // Sort tasks by date
     }
-  
+
     static sortByPriority(tasks) {
-      return tasks.sort((a, b) => a.priority - b.priority);
+        return tasks.sort((a, b) => a.priority - b.priority);
     }
-  }
-  
-  export default TaskSorting;  
+}
+
+export default TaskSorting;
