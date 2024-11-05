@@ -29,30 +29,45 @@ The project incorporates several design patterns to ensure modularity and provid
   - **Observer:** Allows components to react to changes in task status, helping implement notifications or alerts.
   - **Strategy:** Implements multiple sorting and filtering strategies to organize tasks efficiently.
   - **Command:** Enables undo/redo operations for task actions, improving user experience.
-  
-## Get started
 
-1. Install dependencies
+## UML Diagrams
+
+Here are some UML diagrams representing the architecture and the design patterns implemented:
+
+1. **Class Diagram:** Illustrates the relationships between different components (e.g., Task Factory, Task Repository).
+2. **Sequence Diagram:** Describes the sequence of operations in task creation, deletion, and completion.
+
+*Note*: Please refer to the docs/uml directory in the repository for detailed UML diagrams.
+
+## Usage Instructions
+
+1. Install dependencies:
 
    ```bash
    npm install
    ```
 
-2. Start the app
+2. Start the app:
 
    ```bash
-    npx expo start
+   npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+3. Run the app on your preferred platform:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   - **[Development build](https://docs.expo.dev/develop/development-builds/introduction/)**;
+   - **[Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)**
+   - **[iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)**
+   - **[Expo Go](https://expo.dev/go)** for a quick preview of the app.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+4. Develop: Start making changes by editing files in the app directory. This project uses **[file-based routing](https://docs.expo.dev/router/introduction)**.
 
+5. Reset the project (Optional): To start with a fresh app structure, use:
+
+   ```bash
+   npm run reset-project
+   ```
+   
 ## Get a fresh project
 
 When you're ready, run:
