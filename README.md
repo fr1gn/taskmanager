@@ -56,8 +56,8 @@ Here are some UML diagrams representing the architecture and the design patterns
 3. Run the app on your preferred platform:
 
    - **[Development build](https://docs.expo.dev/develop/development-builds/introduction/)**;
-   - **[Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)**
-   - **[iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)**
+   - **[Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)**;
+   - **[iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)**;
    - **[Expo Go](https://expo.dev/go)** for a quick preview of the app.
 
 4. Develop: Start making changes by editing files in the app directory. This project uses **[file-based routing](https://docs.expo.dev/router/introduction)**.
