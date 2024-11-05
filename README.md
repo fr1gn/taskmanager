@@ -1,6 +1,6 @@
 # Task Manager App with Expo
 
-Welcome to your Task Manager app built using [Expo](https://expo.dev), a React Native framework that simplifies mobile app development. This project was created with [create-expo-app](https://www.npmjs.com/package/create-expo-app).
+Welcome to your Task Manager app built using **[Expo](https://expo.dev)**, a React Native framework that simplifies mobile app development. This project was created with **[create-expo-app](https://www.npmjs.com/package/create-expo-app)**.
 
 ## Overview
 
@@ -13,6 +13,23 @@ The project follows a modular architecture, breaking functionality down into sep
 - **Components:** Task creation, task listing, task completion, and UI enhancements (e.g., marking tasks as done).
 - **Patterns:** Design patterns are used for scalable design and future extensibility.
 
+## Implemented Design Patterns
+
+The project incorporates several design patterns to ensure modularity and provide a solid foundation for future features.
+
+- **Creational Patterns:**
+  - **Factory Method:** Creates different types of tasks (e.g., personal, work, project) with consistent handling across task categories.
+  - **Singleton:** Ensures only one instance of the global task repository to avoid duplications and manage a centralized task list.
+
+- **Structural Patterns:**
+  - **Adapter:** Provides flexibility for potential integration with third-party services like Trello or Asana.
+  - **Composite:** Represents tasks hierarchically, allowing tasks to be organized with subtasks as a single entity.
+
+- **Behavioral Patterns:**
+  - **Observer:** Allows components to react to changes in task status, helping implement notifications or alerts.
+  - **Strategy:** Implements multiple sorting and filtering strategies to organize tasks efficiently.
+  - **Command:** Enables undo/redo operations for task actions, improving user experience.
+  
 ## Get started
 
 1. Install dependencies
