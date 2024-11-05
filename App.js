@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, ScrollView, Platform, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import TaskFactory from './TaskFactory';
-import TaskRepository from './TaskRepository';
+import TaskFactory from './TaskFactory'; // Factory Pattern
+import TaskRepository from './TaskRepository'; // Singleton Pattern
 import AddTaskCommand from './AddTaskCommand';
 import Task from './components/Task';
-import TaskObserver from './TaskObserver';
-import TaskSorting from './TaskSorting';
-import TaskCommand from './TaskCommand';
+import TaskObserver from './TaskObserver'; // Observer Pattern
+import TaskSorting from './TaskSorting'; // Strategy Pattern
+import TaskCommand from './TaskCommand'; // Command Pattern
 
 const taskObserver = new TaskObserver();
 const taskCommand = new TaskCommand(TaskRepository);
