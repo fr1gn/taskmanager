@@ -10,6 +10,7 @@ const Task = (props) => {
       <Text style={[styles.itemText, props.completed ? styles.completedText : null]}>
         {props.text}
       </Text>
+      {props.completed && <Text style={styles.checkmark}>✔</Text>}
       <View style={styles.circular} />
     </View>
   );
@@ -43,6 +44,11 @@ const styles = StyleSheet.create({
   completed: {
     backgroundColor: '#55BCF6',
     opacity: 1,
+  },
+  checkmark: {
+    fontSize: 24,
+    color: '#55BCF6', // Match the color to your theme
+    marginLeft: 10,
   },
   circular: {
     width: 12,
