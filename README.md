@@ -1,6 +1,17 @@
-# Welcome to your Expo app 👋
+# Task Manager App with Expo
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Welcome to your Task Manager app built using [Expo](https://expo.dev), a React Native framework that simplifies mobile app development. This project was created with [create-expo-app](https://www.npmjs.com/package/create-expo-app).
+
+## Overview
+
+This Task Manager app enables users to add, view, and mark tasks as completed, with support for organizing tasks by category. The app structure uses design patterns to enhance code flexibility, maintainability, and scalability.
+
+## System Architecture
+
+The project follows a modular architecture, breaking functionality down into separate components to enhance readability and reusability. Key architectural features:
+
+- **Components:** Task creation, task listing, task completion, and UI enhancements (e.g., marking tasks as done).
+- **Patterns:** Design patterns are used for scalable design and future extensibility.
 
 ## Get started
 
